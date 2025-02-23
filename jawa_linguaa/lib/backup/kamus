@@ -1,0 +1,208 @@
+import 'package:flutter/material.dart';
+
+class KamusPage extends StatefulWidget {
+  @override
+  _KamusPageState createState() => _KamusPageState();
+}
+
+class _KamusPageState extends State<KamusPage> {
+  List<Map<String, String>> kamusList = [
+    {'kata_jawa': 'Adem', 'terjemahan': 'Dingin'},
+    {'kata_jawa': 'Aja', 'terjemahan': 'Jangan'},
+    {'kata_jawa': 'Asem', 'terjemahan': 'Asam'},
+    {'kata_jawa': 'Ayo', 'terjemahan': 'Ayo'},
+    {'kata_jawa': 'Banyu', 'terjemahan': 'Air'},
+    {'kata_jawa': 'Bebek', 'terjemahan': 'Bebek'},
+    {'kata_jawa': 'Cilik', 'terjemahan': 'Kecil'},
+    {'kata_jawa': 'Gedhe', 'terjemahan': 'Besar'},
+    {'kata_jawa': 'Golek', 'terjemahan': 'Mencari'},
+    {'kata_jawa': 'Kabeh', 'terjemahan': 'Semua'},
+    {'kata_jawa': 'Kados', 'terjemahan': 'Seperti'},
+    {'kata_jawa': 'Kanca', 'terjemahan': 'Teman'},
+    {'kata_jawa': 'Kembang', 'terjemahan': 'Bunga'},
+    {'kata_jawa': 'Kepenak', 'terjemahan': 'Nyaman'},
+    {'kata_jawa': 'Kowe', 'terjemahan': 'Kamu'},
+    {'kata_jawa': 'Luwih', 'terjemahan': 'Lebih'},
+    {'kata_jawa': 'Mangan', 'terjemahan': 'Makan'},
+    {'kata_jawa': 'Mboten', 'terjemahan': 'Tidak'},
+    {'kata_jawa': 'Merga', 'terjemahan': 'Karena'},
+    {'kata_jawa': 'Ngombe', 'terjemahan': 'Minum'},
+    {'kata_jawa': 'Nggih', 'terjemahan': 'Ya'},
+    {'kata_jawa': 'Ora', 'terjemahan': 'Tidak'},
+    {'kata_jawa': 'Panganan', 'terjemahan': 'Makanan'},
+    {'kata_jawa': 'Pawon', 'terjemahan': 'Dapur'},
+    {'kata_jawa': 'Pinter', 'terjemahan': 'Pintar'},
+    {'kata_jawa': 'Poso', 'terjemahan': 'Puasa'},
+    {'kata_jawa': 'Punika', 'terjemahan': 'Ini'},
+    {'kata_jawa': 'Rame', 'terjemahan': 'Ramai'},
+    {'kata_jawa': 'Rejeki', 'terjemahan': 'Rezeki'},
+    {'kata_jawa': 'Rumiyin', 'terjemahan': 'Dulu'},
+    {'kata_jawa': 'Saget', 'terjemahan': 'Bisa'},
+    {'kata_jawa': 'Sambat', 'terjemahan': 'Mengeluh'},
+    {'kata_jawa': 'Sampun', 'terjemahan': 'Sudah'},
+    {'kata_jawa': 'Sawah', 'terjemahan': 'Sawah'},
+    {'kata_jawa': 'Sedaya', 'terjemahan': 'Semua'},
+    {'kata_jawa': 'Seket', 'terjemahan': 'Lima puluh'},
+    {'kata_jawa': 'Sepuh', 'terjemahan': 'Tua'},
+    {'kata_jawa': 'Sugeng', 'terjemahan': 'Selamat'},
+    {'kata_jawa': 'Tangan', 'terjemahan': 'Tangan'},
+    {'kata_jawa': 'Tepa', 'terjemahan': 'Sesuai'},
+    {'kata_jawa': 'Tresna', 'terjemahan': 'Cinta'},
+    {'kata_jawa': 'Udan', 'terjemahan': 'Hujan'},
+    {'kata_jawa': 'Ulam', 'terjemahan': 'Ikan'},
+    {'kata_jawa': 'Wadon', 'terjemahan': 'Wanita'},
+    {'kata_jawa': 'Wae', 'terjemahan': 'Saja'},
+    {'kata_jawa': 'Wiwitan', 'terjemahan': 'Awal'},
+    {'kata_jawa': 'Yen', 'terjemahan': 'Jika'},
+    {'kata_jawa': 'Yogya', 'terjemahan': 'Jogja'},
+    {'kata_jawa': 'Ziarah', 'terjemahan': 'Ziarah'},
+    {'kata_jawa': 'Asri', 'terjemahan': 'Indah'},
+    {'kata_jawa': 'Bahagia', 'terjemahan': 'Bahagia'},
+    {'kata_jawa': 'Banget', 'terjemahan': 'Sangat'},
+    {'kata_jawa': 'Bareng', 'terjemahan': 'Bersama'},
+    {'kata_jawa': 'Cepet', 'terjemahan': 'Cepat'},
+    {'kata_jawa': 'Dadi', 'terjemahan': 'Jadi'},
+    {'kata_jawa': 'Damel', 'terjemahan': 'Membuat'},
+    {'kata_jawa': 'Elok', 'terjemahan': 'Indah'},
+    {'kata_jawa': 'Galak', 'terjemahan': 'Garang'},
+    {'kata_jawa': 'Hargo', 'terjemahan': 'Gunung'},
+    {'kata_jawa': 'Ibu', 'terjemahan': 'Ibu'},
+    {'kata_jawa': 'Jembar', 'terjemahan': 'Luas'},
+    {'kata_jawa': 'Jujur', 'terjemahan': 'Jujur'},
+    {'kata_jawa': 'Kasih', 'terjemahan': 'Kasih'},
+    {'kata_jawa': 'Kelangan', 'terjemahan': 'Kehilangan'},
+    {'kata_jawa': 'Laku', 'terjemahan': 'Jalan'},
+    {'kata_jawa': 'Minggu', 'terjemahan': 'Minggu'},
+    {'kata_jawa': 'Nemu', 'terjemahan': 'Menemukan'},
+    {'kata_jawa': 'Omah', 'terjemahan': 'Rumah'},
+    {'kata_jawa': 'Pikir', 'terjemahan': 'Pikir'},
+    {'kata_jawa': 'Prawan', 'terjemahan': 'Perawan'},
+    {'kata_jawa': 'Reang', 'terjemahan': 'Berulang'},
+    {'kata_jawa': 'Semangat', 'terjemahan': 'Semangat'},
+    {'kata_jawa': 'Seneng', 'terjemahan': 'Suka'},
+    {'kata_jawa': 'Syukur', 'terjemahan': 'Syukur'},
+    {'kata_jawa': 'Takut', 'terjemahan': 'Takut'},
+    {'kata_jawa': 'Telat', 'terjemahan': 'Terlambat'},
+    {'kata_jawa': 'Tulung', 'terjemahan': 'Tolong'},
+    {'kata_jawa': 'Ulah', 'terjemahan': 'Perilaku'},
+    {'kata_jawa': 'Umbul', 'terjemahan': 'Muncul'},
+    {'kata_jawa': 'Wetan', 'terjemahan': 'Timur'},
+    {'kata_jawa': 'Wong', 'terjemahan': 'Orang'},
+    {'kata_jawa': 'Wungu', 'terjemahan': 'Bangun'},
+    {'kata_jawa': 'Yaiku', 'terjemahan': 'Yaitu'},
+  ];
+
+  List<Map<String, String>> filteredList = [];
+  TextEditingController searchController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    filteredList = kamusList; // Awalnya, semua data ditampilkan
+    searchController.addListener(() {
+      filterSearchResults(searchController.text);
+    });
+  }
+
+  @override
+  void dispose() {
+    searchController.dispose();
+    super.dispose();
+  }
+
+  void filterSearchResults(String query) {
+    if (query.isEmpty) {
+      setState(() {
+        filteredList = kamusList;
+      });
+      return;
+    }
+
+    List<Map<String, String>> tempList = kamusList.where((item) {
+      return item['kata_jawa']!.toLowerCase().contains(query.toLowerCase()) ||
+          item['terjemahan']!.toLowerCase().contains(query.toLowerCase());
+    }).toList();
+
+    setState(() {
+      filteredList = tempList;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xFFA67C52),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        title: Text('Kamus', style: TextStyle(color: Colors.white)),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.grey),
+                borderRadius: BorderRadius.circular(30.0),
+              ),
+              child: Row(
+                children: [
+                  Icon(Icons.search, color: Colors.grey),
+                  SizedBox(width: 8.0),
+                  Expanded(
+                    child: TextField(
+                      controller: searchController,
+                      decoration: InputDecoration(
+                        hintText: 'Masukkan kata atau terjemahan...',
+                        border: InputBorder.none,
+                      ),
+                    ),
+                  ),
+                  Icon(Icons.mic, color: Colors.grey),
+                ],
+              ),
+            ),
+            SizedBox(height: 16.0),
+            Expanded(
+              child: ListView.builder(
+                itemCount: filteredList.length,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(bottom: 16.0),
+                    child: Container(
+                      padding: EdgeInsets.all(16.0),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.black),
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            filteredList[index]['kata_jawa']!,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.red,
+                            ),
+                          ),
+                          SizedBox(height: 4.0),
+                          Text(filteredList[index]['terjemahan']!),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

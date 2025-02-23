@@ -1,0 +1,88 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: AksaraJawaPage(),
+    );
+  }
+}
+
+class AksaraJawaPage extends StatelessWidget {
+  final List<Map<String, String>> aksaraList = [
+    {'image': 'https://storage.googleapis.com/a1aa/image/DOf18rWY5YRREi2j8R1KZfUk5wAobTdS6maV9baj1MkWJpCUA.jpg', 'title': 'HA', 'subtitle': 'dibaca ho'},
+    {'image': 'https://storage.googleapis.com/a1aa/image/Fp8pVW6McbpqGVBr4geZ5YV3GcXfOPNSgFqhj6lY0dMAJpCUA.jpg', 'title': 'NA', 'subtitle': 'dibaca no'},
+    {'image': 'https://storage.googleapis.com/a1aa/image/8QE1UgQfEbRIKCzfcJbhAaaAjeiGveYEiB4CmCRr0E7LlkKQB.jpg', 'title': 'CA', 'subtitle': 'dibaca co'},
+    {'image': 'https://storage.googleapis.com/a1aa/image/MadaLgGNX4o5ClZD8CsLMLLuupa0YeMGMJ8RZTgHTxUhkUBKA.jpg', 'title': 'RA', 'subtitle': 'dibaca ro'},
+    {'image': 'https://storage.googleapis.com/a1aa/image/T7QB1mnBECpfHikEgXKJeDwduVx3q2JwveDLL3YefKjfXSqAF.jpg', 'title': 'KA', 'subtitle': 'dibaca ko'},
+    {'image': 'https://storage.googleapis.com/a1aa/image/Imk8SZ148q6YMFSL66vSwCcfmS5BOKBYmpG33JSkLBwukUBKA.jpg', 'title': 'DA', 'subtitle': 'dibaca do'},
+    {'image': 'https://storage.googleapis.com/a1aa/image/vtWd3GulbzYAPZZoLiURVgMRjxeWtokYgFRKb6eYlElYJpCUA.jpg', 'title': 'TA', 'subtitle': 'dibaca to'},
+    {'image': 'https://storage.googleapis.com/a1aa/image/DRMUskkpyErsDFp0lkYTmalZDEKSCt9lQe6somBnp7fbJpCUA.jpg', 'title': 'SA', 'subtitle': 'dibaca so'},
+    {'image': 'https://storage.googleapis.com/a1aa/image/OXmnB5bEea0AWKSSC1WkqsebCYwHVfsQp5ZexTZQCpQtkkKQB.jpg', 'title': 'WA', 'subtitle': 'dibaca wo'},
+    {'image': 'https://storage.googleapis.com/a1aa/image/N39OHLl6kEbEP9KrEBndZevYIV64Qnf3OVOLfrn0djUTSSFoA.jpg', 'title': 'LA', 'subtitle': 'dibaca lo'},
+    {'image': 'https://storage.googleapis.com/a1aa/image/0MLHUlic0AJWItTFgLRe4THfzksfAjgVV7MN8U0wb4PLSSFoA.jpg', 'title': 'PA', 'subtitle': 'dibaca po'},
+    {'image': 'https://storage.googleapis.com/a1aa/image/yxLaRD34lnK8OBg8fV1KEIeTbkPWYUESPmJjsZonLtWaJpCUA.jpg', 'title': 'DHA', 'subtitle': 'dibaca dho'},
+    {'image': 'https://storage.googleapis.com/a1aa/image/rQA2GthcxB40FB8q9exXRaE2BZTRffkWgesXMdUjZeD7IJVgC.jpg', 'title': 'JA', 'subtitle': 'dibaca jo'},
+    {'image': 'https://storage.googleapis.com/a1aa/image/UeSEMMRO1szsDK5pHkMe4ohTcjSK3ESDCp5kr4f8ufE3kkKQB.jpg', 'title': 'YA', 'subtitle': 'dibaca yo'},
+    {'image': 'https://storage.googleapis.com/a1aa/image/6Rbu7LeG4pxfkE9D1Fmltk1NAC6vgVAWffp39dGtLz65jkKQB.jpg', 'title': 'NYA', 'subtitle': 'dibaca nyo'},
+    {'image': 'https://storage.googleapis.com/a1aa/image/eEWXYSUWykxPfUMpNt8snCMgkpiBIvInoDzVzENeSTaGSSFoA.jpg', 'title': 'MA', 'subtitle': 'dibaca mo'},
+    {'image': 'https://storage.googleapis.com/a1aa/image/4K3VyCRVwDo2KV15eUEQk8I8wsQLNehHQsHT9BFpi8PPJpCUA.jpg', 'title': 'GA', 'subtitle': 'dibaca go'},
+    {'image': 'https://storage.googleapis.com/a1aa/image/tKVGI5JBGy6aAFHmYBCvNNhNQf0fejrHMkXYRGfHYanTlkKQB.jpg', 'title': 'BA', 'subtitle': 'dibaca bo'},
+    {'image': 'https://storage.googleapis.com/a1aa/image/MohBoekGQAXCCy14zVNzRUDsMZIFLzr53VMbx6hcRlwokUBKA.jpg', 'title': 'THA', 'subtitle': 'dibaca tho'},
+    {'image': 'https://storage.googleapis.com/a1aa/image/4T8gLtKfguQHX6K2BseUHiazQCFSa9IOUAORhSdN5rqhJpCUA.jpg', 'title': 'NGA', 'subtitle': 'dibaca ngo'},
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xFFA67C52),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            // Fungsi untuk kembali ke halaman sebelumnya
+            Navigator.pop(context);
+          },
+        ),
+        title: Text('Tabel Aksara Jawa', style: TextStyle(color: Colors.white)),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 4,
+            crossAxisSpacing: 8.0,
+            mainAxisSpacing: 8.0,
+          ),
+          itemCount: aksaraList.length,
+          itemBuilder: (context, index) {
+            return Column(
+              children: [
+                Image.network(
+                  aksaraList[index]['image']!,
+                  height: 50,
+                  width: 50,
+                  fit: BoxFit.cover,
+                ),
+                SizedBox(height: 8),
+                Text(
+                  aksaraList[index]['title']!,
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  aksaraList[index]['subtitle']!,
+                  style: TextStyle(color: Colors.grey),
+                ),
+              ],
+            );
+          },
+        ),
+      ),
+    );
+  }
+}

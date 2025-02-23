@@ -1,0 +1,158 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: KontribusiPenggunaPage(),
+    );
+  }
+}
+
+class KontribusiPenggunaPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xFFA47C5C),  // Warna AppBar sesuai dengan desain Anda
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            // Fungsi untuk kembali ke halaman sebelumnya
+            Navigator.pop(context);
+          },
+        ),
+        title: Text('Kontribusi Pengguna' ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Text(
+              'Kirimkan kosakata yang belum ada didalam kamus agar kata dalam kamus semakin lengkap. Atas partisipasinya kami mengucapkan terimakasih.',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 14),
+            ),
+            SizedBox(height: 16),
+            Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(color: Colors.grey[300]!),
+                        ),
+                        child: Column(
+                          children: [
+                            TextField(
+                              decoration: InputDecoration(
+                                hintText: 'Masukkan Kata',
+                                border: InputBorder.none,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                            Text('Bahasa Jawa'),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(width: 16),
+                Expanded(
+                  child: Column(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(color: Colors.grey[300]!),
+                        ),
+                        child: Column(
+                          children: [
+                            TextField(
+                              decoration: InputDecoration(
+                                hintText: 'Masukkan Terjemahan',
+                                border: InputBorder.none,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                            Text('Bahasa Indonesia'),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 16),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color(0xFFA47C5C), // Warna tombol yang benar
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                padding: EdgeInsets.symmetric(vertical: 16),
+              ),
+              onPressed: () {},
+              child: Text(
+                'Kirim Kosakata Baru',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
+            SizedBox(height: 16),
+            Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    padding: EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      color: Colors.grey[200],
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(color: Colors.grey[300]!),
+                    ),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Masukan dan Saran Pengguna',
+                        border: InputBorder.none,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ),
+                SizedBox(width: 8),
+                Container(
+                  decoration: BoxDecoration(
+                    color: Color(0xFFA47C5C), // Warna sesuai dengan tombol utama
+                    borderRadius: BorderRadius.circular(8),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black26,
+                        blurRadius: 4,
+                        offset: Offset(2, 2),
+                      ),
+                    ],
+                  ),
+                  child: IconButton(
+                    icon: Icon(Icons.send, color: Colors.white),
+                    onPressed: () {},
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
